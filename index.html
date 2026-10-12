@@ -3,145 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>INVEST WITH KALLY07_FX | Smart Investments Today, Financial Freedom Tomorrow</title>
-    <!-- Tailwind CSS CDN for modern grid layouts -->
+    <title>KALLY07_FX | Premium Smart Money Concepts Portal</title>
+    <!-- Tailwind CSS Engine -->
     <script src="https://tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cloudflare.com">
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    },
                     colors: {
-                        darkBg: '#05070c',
-                        cardBg: '#0e1320',
-                        goldPrimary: '#d4af37',
-                        redAccent: '#d92323',
-                        greenAccent: '#23d95c'
+                        darkBg: '#030508',
+                        cardBg: '#090d16',
+                        goldPrimary: '#dfb743',
+                        goldHover: '#f0cc66',
+                        redAccent: '#e53e3e',
+                        greenAccent: '#38a169',
                     }
                 }
             }
         }
     </script>
+    <style>
+        .glass-panel {
+            background: linear-gradient(135deg, rgba(14, 22, 38, 0.6) 0%, rgba(6, 10, 18, 0.8) 100%);
+            backdrop-filter: blur(12px);
+        }
+        .gold-gradient {
+            background: linear-gradient(135deg, #dfb743 0%, #f7df94 50%, #c49b23 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        /* Hidden state for pages not active */
+        .page-view {
+            display: none;
+        }
+        .page-view.active-page {
+            display: block;
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
-<body class="bg-darkBg text-gray-200 font-sans antialiased selection:bg-goldPrimary selection:text-darkBg">
+<body class="bg-darkBg text-slate-300 font-sans antialiased">
 
-    <!-- HEADER / NAVIGATION -->
-    <header class="border-b border-gray-900 bg-darkBg/95 backdrop-blur sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-center gap-2">
-                <span class="text-3xl">👑</span>
-                <h1 class="text-2xl font-black tracking-wider text-goldPrimary">KALLY07_FX</h1>
+    <!-- NAVIGATION BAR -->
+    <header class="border-b border-white/5 bg-darkBg/90 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3 cursor-pointer" onclick="navigateTo('home')">
+                <div class="w-9 h-9 rounded-lg bg-gradient-to-br from-goldPrimary to-yellow-600 flex items-center justify-center text-darkBg text-xl font-bold shadow-lg">👑</div>
+                <h1 class="font-display text-xl font-bold tracking-widest text-white">KALLY07<span class="text-goldPrimary">_FX</span></h1>
             </div>
-            <nav class="flex flex-wrap justify-center gap-6 text-xs uppercase font-bold tracking-widest">
-                <a href="#investment" class="hover:text-goldPrimary transition">Investment Levels</a>
-                <a href="#products" class="hover:text-goldPrimary transition">Additional Products</a>
-                <a href="#rules" class="hover:text-goldPrimary transition">Strategies</a>
-                <a href="#contact" class="hover:text-goldPrimary transition">Connect</a>
+            <!-- Dynamic Navigation Links -->
+            <nav class="hidden md:flex gap-8 text-xs uppercase tracking-widest font-semibold">
+                <button onclick="navigateTo('home')" id="nav-home" class="text-goldPrimary hover:text-white transition">Home</button>
+                <button onclick="navigateTo('programs')" id="nav-programs" class="text-slate-400 hover:text-goldPrimary transition">Growth Programs</button>
+                <button onclick="navigateTo('book')" id="nav-book" class="text-slate-400 hover:text-goldPrimary transition">SMC E-Book</button>
+                <button onclick="navigateTo('bot')" id="nav-bot" class="text-slate-400 hover:text-goldPrimary transition">Trading Bot</button>
             </nav>
+            <a href="https://wa.me" target="_blank" class="text-xs uppercase tracking-wider font-bold bg-white/5 border border-white/10 hover:border-goldPrimary px-5 py-2.5 rounded-lg text-white transitionAll duration-300">
+                Live Support
+            </a>
         </div>
     </header>
 
-    <!-- HERO PROFILE HEADER -->
-    <section class="max-w-6xl mx-auto px-4 py-12 text-center">
-        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tighter text-white uppercase mb-2">
-            INVEST WITH <span class="text-goldPrimary">KALLY07_FX</span>
-        </h2>
-        <p class="text-goldPrimary font-mono tracking-widest text-sm uppercase mb-8">
-            🚀 SMART INVESTMENTS TODAY, FINANCIAL FREEDOM TOMORROW!
-        </p>
-    </section>
+    <!-- MAIN INTERACTIVE PAGE VIEWS ROUTER -->
+    <main class="min-h-[75vh]">
 
-    <!-- MAIN CORE PLANS BLOCK -->
-    <section id="investment" class="max-w-6xl mx-auto px-4 py-8">
-        <div class="grid md:grid-cols-3 gap-8">
-            
-            <!-- LEVEL 1: GROWING SMALL ACCOUNTS -->
-            <div class="bg-cardBg border-t-4 border-greenAccent p-6 rounded-xl shadow-lg flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="bg-greenAccent text-darkBg font-black px-3 py-1 rounded text-xl">1</span>
-                        <h3 class="text-lg font-black text-white uppercase tracking-tight">Growing Small Accounts</h3>
-                    </div>
-                    <p class="text-xs text-gray-400 mb-6">High-probability structural compounding targets managed directly by our team.</p>
-                    <div class="space-y-3 font-mono text-sm">
-                        <div class="flex justify-between bg-darkBg/60 p-3 rounded border border-gray-900">
-                            <span class="text-gray-400">Invest <strong class="text-white">N$ 320</strong></span>
-                            <span class="text-greenAccent font-bold">Get N$ 1800 (15 Days)</span>
-                        </div>
-                        <div class="flex justify-between bg-darkBg/60 p-3 rounded border border-gray-900">
-                            <span class="text-gray-400">Invest <strong class="text-white">N$ 800</strong></span>
-                            <span class="text-greenAccent font-bold">Get N$ 5500 (25 Days)</span>
-                        </div>
-                        <div class="flex justify-between bg-darkBg/60 p-3 rounded border border-gray-900">
-                            <span class="text-gray-400">Invest <strong class="text-white">N$ 1500</strong></span>
-                            <span class="text-greenAccent font-bold">Get N$ 8000 (30 Days)</span>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://wa.me." target="_blank" class="w-full mt-6 py-3 bg-greenAccent text-darkBg font-black text-xs uppercase tracking-widest rounded shadow hover:opacity-90 transition text-center block">Get Started</a>
+        <!-- PAGE 1: HOME PAGE -->
+        <div id="page-home" class="page-view active-page max-w-5xl mx-auto px-6 pt-16 pb-12 text-center">
+            <span class="inline-flex items-center gap-2 bg-goldPrimary/10 border border-goldPrimary/20 text-goldPrimary text-[10px] font-bold uppercase px-4 py-1.5 rounded-full tracking-widest mb-6">
+                👑 Smart Investments Today, Financial Freedom Tomorrow
+            </span>
+            <h2 class="font-display text-4xl md:text-7xl font-bold tracking-tight text-white mb-6 uppercase leading-none">
+                Institutional Orderflow <br><span class="gold-gradient">Execution Portfolios</span>
+            </h2>
+            <p class="max-w-2xl mx-auto text-slate-400 text-base md:text-lg mb-10 leading-relaxed font-light">
+                Stop generating retail liquidity pools for central banks. Discover our growth tracks, custom automated trading algorithms, and step-by-step master handbook guides.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <button onclick="navigateTo('programs')" class="bg-gradient-to-r from-goldPrimary to-yellow-600 hover:from-goldHover hover:to-goldPrimary text-darkBg font-extrabold px-8 py-4 rounded-xl transition duration-300">
+                    Explore Growth Programs
+                </button>
+                <button onclick="navigateTo('book')" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold px-8 py-4 rounded-xl transition duration-200">
+                    Get SMC E-Book
+                </button>
             </div>
-
-            <!-- LEVEL 2: INVESTMENT -->
-            <div class="bg-cardBg border-t-4 border-redAccent p-6 rounded-xl shadow-lg flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="bg-redAccent text-white font-black px-3 py-1 rounded text-xl">2</span>
-                        <h3 class="text-lg font-black text-white uppercase tracking-tight">Investment Dividends</h3>
-                    </div>
-                    <p class="text-xs text-gray-400 mb-6">Short-term margin acceleration plans with structural fixed targets.</p>
-                    <div class="space-y-3 font-mono text-sm">
-                        <div class="flex justify-between bg-darkBg/60 p-3 rounded border border-gray-900">
-                            <span class="text-gray-400">Invest <strong class="text-white">N$ 320</strong></span>
-                            <span class="text-white font-bold">Get N$ 800</span>
-                        </div>
-                        <div class="flex justify-between bg-darkBg/60 p-3 rounded border border-gray-900">
-                            <span class="text-gray-400">Invest <strong class="text-white">N$ 500</strong></span>
-                            <span class="text-white font-bold">Get N$ 2000</span>
-                        </div>
-                    </div>
-                    <div class="bg-redAccent/10 text-redAccent border border-redAccent/20 text-center font-bold text-xs uppercase py-2 px-4 rounded mt-6">
-                        ⚠️ NB: Profit to be shared 50% / 50%
-                    </div>
+            <!-- Features Overview Grid -->
+            <div class="grid md:grid-cols-3 gap-6 text-left border-t border-white/5 pt-12">
+                <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5">
+                    <div class="text-goldPrimary text-xl mb-3"><i class="fas fa-chart-line"></i></div>
+                    <h4 class="text-white font-bold mb-2">Compounding Accounts</h4>
+                    <p class="text-xs text-slate-400">Scale micro account balances efficiently through specialized margin tracking models.</p>
                 </div>
-                <a href="https://wa.me." target="_blank" class="w-full mt-6 py-3 bg-redAccent text-white font-black text-xs uppercase tracking-widest rounded shadow hover:opacity-90 transition text-center block">Invest Now</a>
-            </div>
-
-            <!-- LEVEL 3: ACCOUNT MANAGEMENT -->
-            <div class="bg-cardBg border-t-4 border-goldPrimary p-6 rounded-xl shadow-lg flex flex-col justify-between">
-                <div>
-                    <div class="flex items-center gap-3 mb-4">
-                        <span class="bg-goldPrimary text-darkBg font-black px-3 py-1 rounded text-xl">3</span>
-                        <h3 class="text-lg font-black text-white uppercase tracking-tight">XM Account Management</h3>
-                    </div>
-                    <p class="text-xs text-gray-400 mb-6">Create an XM account using my private link and I will manage your executions entirely.</p>
-                    <div class="space-y-3 font-semibold text-sm">
-                        <div class="flex items-center gap-2 bg-darkBg/60 p-3 rounded border border-gray-900">
-                            <span class="text-goldPrimary">✔</span> <span class="text-gray-300">Profit Split: <strong class="text-white">70% / 30%</strong></span>
-                        </div>
-                        <div class="flex items-center gap-2 bg-darkBg/60 p-3 rounded border border-gray-900">
-                            <span class="text-goldPrimary">✔</span> <span class="text-gray-300">To join VIP Group is <strong class="text-white">N$ 460</strong></span>
-                        </div>
-                    </div>
+                <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5">
+                    <div class="text-goldPrimary text-xl mb-3"><i class="fas fa-book-open"></i></div>
+                    <h4 class="text-white font-bold mb-2">SMC Mastery Guide</h4>
+                    <p class="text-xs text-slate-400">Step-by-step execution blueprints targeting institutional volume blocks and imbalance gaps.</p>
                 </div>
-                <a href="https://wa.me." target="_blank" class="w-full mt-6 py-3 bg-goldPrimary text-darkBg font-black text-xs uppercase tracking-widest rounded shadow hover:opacity-90 transition text-center block">Connect Account</a>
+                <div class="p-6 rounded-xl bg-white/[0.02] border border-white/5">
+                    <div class="text-goldPrimary text-xl mb-3"><i class="fas fa-robot"></i></div>
+                    <h4 class="text-white font-bold mb-2">Automated Bot Engine</h4>
+                    <p class="text-xs text-slate-400">Low-latency systemic market executions connected 24/7 to protect structural account limits.</p>
+                </div>
             </div>
-
         </div>
-    </section>
 
-    <!-- ADDITIONAL PREMIUM PRODUCTS -->
-    <section id="products" class="max-w-6xl mx-auto px-4 py-16">
-        <h3 class="text-2xl font-black text-center text-white uppercase tracking-wider mb-12">Additional Products</h3>
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            
-            <!-- TRADING BOT -->
-            <div class="bg-cardBg border border-gray-900 p-6 rounded-xl relative overflow-hidden">
-                <div class="absolute top-4 right-4 bg-redAccent text-white font-mono text-sm font-black px-3 py-1 rounded">N$ 1000</div>
-                <div class="text-goldPrimary text-3xl mb-4"><i class="fas fa-robot"></i></div>
-                <h4 class="text-xl font-black text-white uppercase tracking-tight mb-4">Kally07 FX TRADING BOT</h4>
-                <ul class="space-y-2 text-sm text-gray-400 mb-6">
-                    <li class="flex items-center gap-2"><span class="text-redAccent">✔</span> 24/7 Automated Systematic Trading</li>
-                    <li class="flex items-center gap-2"><span class="text-redAccent">✔</span> Built on Proven Backtested Strategies</li>
-                    <li class="flex items-center gap-2"><span class="text-redAccent">✔</span> Plug & Play - Extremely Easy to Use</li>
-                    <li class="flex items-center gap-2"><span class="text-redAccent">✔</span> Continuous Free Technical Updates & Support</li>
-                </ul>
+        <!-- PAGE 2: GROWTH PROGRAMS PAGE -->
+        <div id="page-programs" class="page-view max-w-6xl mx-auto px-6 py-12">
+            <div class="text-center max-w-xl mx-auto mb-12">
+                <h3 class="font-display text-3xl font-bold text-white uppercase">Tier-Scale Growth Programs</h3>
+                <p class="text-xs text-slate-500 mt-2">Compounding structures engineered for multi-asset account advancement tracks.</p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-8">
+                <!-- Level 1 Card -->
+                <div class="glass-panel border border-white/5 p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <span class="text-[10px] font-mono tracking-widest font-bold uppercase text-greenAccent bg-greenAccent/10 px-2.5 py-1 rounded-md border border-greenAccent/20 inline-block mb-4">Level 01</span>
+                        <h4 class="font-display text-xl font-bold text-white mb-6 uppercase">Small Account Multipliers</h4>
+                        <div class="space-y-3 font-mono text-sm">
+                            <div class="flex justify-between items-center bg-white/[0.02] border border-white/5 p-3 rounded-xl"><span>Invest N$ 320</span> <strong class="text-greenAccent">Get N$ 1800 (15 Days)</strong></div>
+                            <div class="flex justify-between items-center bg-white/[0.02] border border-white/5 p-3 rounded-xl"><span>Invest N$ 800</span> <strong class="text-greenAccent">Get N$ 5500 (25 Days)</strong></div>
+                            <div class="flex justify-between items-center bg-white/[0.02] border border-white/5 p-3 rounded-xl"><span>Invest N$ 1500</span> <strong class="text-greenAccent">Get N$ 8000 (30 Days)</strong></div>
+                        </div>
+                    </div>
+                    <a href="https://wa.me?text=Hi%20Kally,%20I%20want%20to%20apply%20for%20Level%201%20Small%20Accounts." target="_blank" class="w-full mt-8 py-3 bg-white/5 hover:bg-greenAccent hover:text-darkBg text-white font-bold text-xs uppercase tracking-widest rounded-xl text-center transition-all duration-300">Apply for Level 1</a>
+                </div>
+                <!-- Level 2 Card -->
+                <div class="glass-panel border-2 border-goldPrimary/60 p-6 rounded-2xl flex flex-col justify-between shadow-lg relative">
+                    <div>
+                        <span class="text-[10px] font-mono tracking-widest font-bold uppercase text-goldPrimary bg-goldPrimary/10 px-2.5 py-1 rounded-md border border-goldPrimary/20 inline-block mb-4">Level 02</span>
+                        <h4 class="font-display text-xl font-bold text-white mb-6 uppercase">Direct Asset Investment</h4>
+                        <div class="space-y-3 font-mono text-sm">
